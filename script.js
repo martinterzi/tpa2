@@ -56,7 +56,7 @@ function buscarImagenes() {
     const terminoBusqueda = document.querySelector('#termino').value;
 
     const key = 'U073i59q1HGPYoyrizPAip0ZwDVdSTM';
-    const url = (`http://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
+    const url = (`https://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
     
     fetch(url)
         .then(respuesta => respuesta.json())
