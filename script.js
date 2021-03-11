@@ -79,7 +79,7 @@ function mostrarImagenes(imagenes) {
         resultado.removeChild(resultado.firstChild);
     }
     
-    imagenes.forEach( imagen => {
+    imagenes.data.forEach( imagen => {
 
         const {preview_gif} = imagen;
         resultado.innerHTML += `
