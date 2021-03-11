@@ -55,19 +55,18 @@ function mostrarAlerta(mensaje) {
 function buscarImagenes() {
     const terminoBusqueda = document.querySelector('#termino').value;
 
-    const key = 'HKFDs5P3YZ8x8kY6QrJUoXCqV79GAomT';
-    const url = (`http://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
+    const key = 'U073i59q1HGPYoyrizPAip0ZwDVdSTM';
+    const url = (`https://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
     
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(resultado => {
-          
-            mostrarImagenes(resultado.data);
+             console.log(resultado);
         })
 
 
 }
-
+/*
 function mostrarImagenes(imagenes) {
     
     while (resultado.firstChild) {
@@ -84,4 +83,4 @@ function mostrarImagenes(imagenes) {
             `;
     });
       
-}
+}*/
