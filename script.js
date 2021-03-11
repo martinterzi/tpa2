@@ -61,7 +61,9 @@ function buscarImagenes() {
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(resultados => {
-             mostrarImagenes(resultados);
+
+            console.log(resultados)
+            mostrarImagenes(resultados.hits);
         })
 
 
