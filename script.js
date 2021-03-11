@@ -81,7 +81,7 @@ function mostrarImagenes(imagenes) {
     
     imagenes.forEach( imagen => {
 
-        const {preview_gif} = imagen;
+        const {preview_gif} = imagen.data.images.preview_gif.url;
         resultado.innerHTML += `
             
                     <img class="w-full" src="${preview_gif}"/>
