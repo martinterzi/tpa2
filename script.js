@@ -63,7 +63,7 @@ function buscarImagenes() {
         .then(resultados => {
 
             console.log(resultados)
-            mostrarImagenes(resultados.hits);
+            mostrarImagenes(resultados.data);
         })
 
 
