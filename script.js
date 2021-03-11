@@ -55,7 +55,7 @@ function mostrarAlerta(mensaje) {
 function buscarImagenes() {
     const terminoBusqueda = document.querySelector('#termino').value;
 
-    const key = 'U073i59q1HGPYoyrizPAip0ZwDVdSTM';
+    const key = 'Uva2haK5rm1yEoCYsd2zUqiLjxonxwd9M';
     const url = (`https://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
     
     fetch(url)
