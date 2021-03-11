@@ -60,13 +60,17 @@ function buscarImagenes() {
     
     fetch(url)
         .then(respuesta => respuesta.json())
-        .then(resultado => {
-             console.log(resultado);
+        .then(resultados => {
+             mostrarImagenes(resultados);
         })
 
 
 }
-/*
+
+
+
+
+
 function mostrarImagenes(imagenes) {
     
     while (resultado.firstChild) {
@@ -75,12 +79,12 @@ function mostrarImagenes(imagenes) {
     
     imagenes.forEach( imagen => {
 
-        const { preview} = imagen;
+        const {preview} = imagen;
         resultado.innerHTML += `
             
-                    <img class="w-full" src=${preview} alt={tags} />
+                    <img class="w-full" src=${preview}/>
                    
             `;
     });
       
-}*/
+}
