@@ -60,10 +60,10 @@ function buscarImagenes() {
     
     fetch(url)
         .then(respuesta => respuesta.json())
-        .then(resultados => {
+        .then(resultado => {
 
-            console.log(resultados)
-            mostrarImagenes(resultados.data);
+            console.log(resultado)
+            mostrarImagenes(resultado.data);
         })
 
 
