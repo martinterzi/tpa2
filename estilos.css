@@ -1,0 +1,50 @@
+body{
+    width: 320px;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.contenedor-nav{
+    height: 400px;
+    width: 100%;
+    display: none;
+    background-color: #572EE5;
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+}
+
+.img-busqueda{
+    width: 100%;
+}
+
+.busqueda-input{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #572EE5;
+    border-radius: 27px;
+}
+
+.input{
+    border: none;
+}
+
+.contenedor-h{
+    display: block;
+    text-align: center;
+}
+
+.menu-item{
+    list-style: none;
+}
+
+
+
+

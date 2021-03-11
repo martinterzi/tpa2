@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="logo-mobile.svg" alt="">
+            </div>
+            <div class="nav-ham">
+                <img src="burger.svg" alt="" class="menu-ham"></li>
+            </div>
+        </div>
+        <div class="contenedor-nav">
+            <nav class="menu">
+                <ul class="menu-item">
+                    <li>Modo Nocturno</li>
+                    <li>Favoritos</li>
+                    <li>Mis GIFOS</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="busqueda">
+        <div class="contenedor-busqueda">
+            <div class="busqueda-titulo">
+                <p class="titulo">Inspirate, busca, guarda y crea los mejores GIFOS</p>
+            </div>
+            <div class="busqueda-imagen">
+                <img src="ilustra_header.svg" alt="amigos" class="img-busqueda">
+            </div>
+            <div class="busqueda-input" id="form">
+                <div class="busqueda-input-escribir">
+                    <input type="text" class="input" id="termino" type="search" placeholder="Busca GIFOS y mas">
+                </div>
+                <div class="busqueda-input-lupa">
+                    <a href="" type="submit" id="accion"><img src="icon-search.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="contenedor-h">
+                <div class="busqueda-h1">
+                    <h1>Trending:</h1>
+                </div>
+                <div class="busqueda-h3">
+                    <h3>Reactions, Entertainment, Sports, Stickers, Artists</h3>
+                </div>
+            </div>
+            <div id="resultado"></div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

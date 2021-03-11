@@ -1,0 +1,87 @@
+$(document).ready(function () {
+
+    $('.menu-ham').on('click', function () {
+        $('.contenedor-nav').slideToggle();
+
+
+    })
+})
+
+const resultado = document.querySelector('#resultado');
+
+window.onload = () => {
+    const form = document.querySelector('#form');
+    form.addEventListener('click', validarFormulario);
+
+};
+
+
+function validarFormulario(e) {
+    e.preventDefault();
+
+    const terminoBusqueda = document.querySelector('#termino').value;
+
+    if (terminoBusqueda === '') {
+        // mensaje de error
+        mostrarAlerta("Agrega un término de búsqueda");
+
+        return;
+    }
+
+    buscarImagenes();
+}
+
+function mostrarAlerta(mensaje) {
+    const alerta = document.querySelector('.aa');
+    if (!alerta) {
+
+        const alerta = document.createElement('p');
+        alerta.classList.add('aa');
+        alerta.innerHTML = `
+             <strong class="font-bold">Error!</strong>
+             <span>${mensaje}</span>`;
+        resultado.appendChild(alerta);
+
+        setTimeout(() => {
+            alerta.remove();
+        }, 3000);
+    }
+
+
+
+}
+
+// Busca las imagenes en una API
+function buscarImagenes() {
+    const terminoBusqueda = document.querySelector('#termino').value;
+
+    const key = 'HKFDs5P3YZ8x8kY6QrJUoXCqV79GAomT';
+    const url = (`http://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
+    
+    fetch(url)
+        .then(respuesta => respuesta.json())
+        .then(resultado => {
+          
+            mostrarImagenes(resultado.data);
+        })
+
+
+}
+
+function mostrarImagenes(imagenes) {
+    
+    while (resultado.firstChild) {
+        resultado.removeChild(resultado.firstChild);
+    }
+    
+    imagenes.forEach( imagen => {
+
+        const { preview} = imagen;
+        resultado.innerHTML += `
+            
+                    <img class="w-full" src=${preview} alt={tags} />
+                   
+            `;
+    });
+      
+}
