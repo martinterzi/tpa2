@@ -83,9 +83,9 @@ function mostrarImagenes(imagenes) {
 
         const {images} = imagen;
         resultado.innerHTML += `
-            
-                    <img class="w-full" src="${images.preview_gif.url}"/>
-                   
+                <div class="res-im ">
+                    <img class="im-pre" src="${images.preview_gif.url}"/>
+                </div>
             `;
     });
       
