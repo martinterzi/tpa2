@@ -83,7 +83,7 @@ function mostrarImagenes(imagenes) {
 
         const {images} = imagen;
         resultado.innerHTML += `
-                <div class="res-im ">
+                <div class="res-im">
                     <img class="im-pre" src="${images.preview_gif.url}"/>
                 </div>
             `;
