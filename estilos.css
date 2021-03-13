@@ -45,6 +45,10 @@ body{
     list-style: none;
 }
 
-
+.res-im{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px;
+}
 
 
