@@ -51,4 +51,9 @@ body{
     grid-template-rows: 200px 200px 200px 200px 200px 200px;
 }
 
+.res-im{
+    width: 90%;
+    height: 120px;
+}
+
 
