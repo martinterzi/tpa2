@@ -57,7 +57,7 @@ function buscarImagenes() {
 
     const key = 'va2haK5rm1yEoCYsd2zUqiLjxonxwd9M';
     const url = (`https://api.giphy.com/v1/gifs/search?api_key=${key}&limit=12&q=${terminoBusqueda}`);
-    
+
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(resultado => {
@@ -74,38 +74,67 @@ function buscarImagenes() {
 
 
 function mostrarImagenes(imagenes) {
-    
+
     while (resultado.firstChild) {
         resultado.removeChild(resultado.firstChild);
     }
-    
-    imagenes.forEach( imagen => {
 
-        const {images} = imagen;
+    imagenes.forEach(imagen => {
+
+        const { images } = imagen;
         resultado.innerHTML += `
                 <div class="res-im">
                     <img class="im-pre" src="${images.preview_gif.url}"/>
                 </div>
             `;
     });
-      
+
 }
 
 
+const track = document.querySelector('.track');
+let initialPosition = null;
+let moving = false;
+let transform = 0;
 
-
-/*slider*/
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+const gestureStart = (e) => {
+    initialPosition = e.pageX;
+    moving = true;
+    const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+    if (transformMatrix !== 'none') {
+        transform = parseInt(transformMatrix.split(',')[4].trim());
+    }
 }
+
+const gestureMove = (e) => {
+    if (moving) {
+        const currentPosition = e.pageX;
+        const diff = currentPosition - initialPosition;
+        track.style.transform = `translateX(${transform + diff}px)`;
+    }
+};
+
+const gestureEnd = (e) => {
+    moving = false;
+}
+
+if (window.PointerEvent) {
+    window.addEventListener('pointerdown', gestureStart);
+
+    window.addEventListener('pointermove', gestureMove);
+
+    window.addEventListener('pointerup', gestureEnd);
+} else {
+    window.addEventListener('touchdown', gestureStart);
+
+    window.addEventListener('touchmove', gestureMove);
+
+    window.addEventListener('touchup', gestureEnd);
+
+    window.addEventListener('mousedown', gestureStart);
+
+    window.addEventListener('mousemove', gestureMove);
+
+    window.addEventListener('mouseup', gestureEnd);
+}
+
