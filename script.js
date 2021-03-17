@@ -73,8 +73,8 @@ function buscarImagenes() {
 
 
 function mostrarImagenes(imagenes) {
-    document.getElementById("resultado").style.display='grid';
-    
+    document.getElementById("resultado").style.display = 'grid';
+
     while (resultado.firstChild) {
         resultado.removeChild(resultado.firstChild);
     }
@@ -95,7 +95,7 @@ function mostrarImagenes(imagenes) {
 /*TRENDING-------------------------------------------*/
 
 function llamarTrending() {
-    
+
 
     const key = 'va2haK5rm1yEoCYsd2zUqiLjxonxwd9M';
     const url = (`https://api.giphy.com/v1/gifs/trending?api_key=${key}`);
@@ -117,7 +117,7 @@ function mostrarImagenesTrending(imagenes) {
     imagenes.forEach(imagen => {
 
         const { images } = imagen;
-              track.innerHTML += `
+        track.innerHTML += `
                 <div class="card">
                     <img class="im-tre" src="${images.preview_gif.url}"/>
                 </div>
@@ -130,11 +130,11 @@ function mostrarImagenesTrending(imagenes) {
 let initialPosition = null;
 let moving = false;
 let transform = 0;
-
+const tracks = document.querySelector('.track');
 const gestureStart = (e) => {
     initialPosition = e.pageX;
     moving = true;
-    const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+    const transformMatrix = window.getComputedStyle(tracks).getPropertyValue('transform');
     if (transformMatrix !== 'none') {
         transform = parseInt(transformMatrix.split(',')[4].trim());
     }
@@ -144,7 +144,7 @@ const gestureMove = (e) => {
     if (moving) {
         const currentPosition = e.pageX;
         const diff = currentPosition - initialPosition;
-        track.style.transform = `translateX(${transform + diff}px)`;
+        tracks.style.transform = `translateX(${transform + diff}px)`;
     }
 };
 
