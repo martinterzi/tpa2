@@ -9,7 +9,7 @@ $(document).ready(function () {
 
 const resultado = document.querySelector('#resultado');
 
-const track = document.querySelector('#track');
+
 
 window.onload = () => {
     const form = document.querySelector('#form');
@@ -98,7 +98,7 @@ function llamarTrending() {
     
 
     const key = 'va2haK5rm1yEoCYsd2zUqiLjxonxwd9M';
-    const url = (`https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=15`);
+    const url = (`https://api.giphy.com/v1/gifs/trending?api_key=${key}`);
 
     fetch(url)
         .then(respuesta => respuesta.json())
@@ -111,13 +111,13 @@ function llamarTrending() {
 
 }
 
-
+const tracks = document.querySelector('#tracks');
 function mostrarImagenesTrending(imagenes) {
 
     imagenes.forEach(imagen => {
 
         const { images } = imagen;
-              track.innerHTML += `
+              tracks.innerHTML += `
                 <div class="card">
                     <img class="im-tre" src="${images.preview_gif.url}"/>
                 </div>
@@ -127,8 +127,6 @@ function mostrarImagenesTrending(imagenes) {
 }
 
 
-
-const track = document.querySelector('.track');
 let initialPosition = null;
 let moving = false;
 let transform = 0;
