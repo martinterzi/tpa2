@@ -111,13 +111,13 @@ function llamarTrending() {
 
 }
 
-const tracks = document.querySelector('.tracks');
+const track = document.querySelector('.track');
 function mostrarImagenesTrending(imagenes) {
 
     imagenes.forEach(imagen => {
 
         const { images } = imagen;
-              tracks.innerHTML += `
+              track.innerHTML += `
                 <div class="card">
                     <img class="im-tre" src="${images.preview_gif.url}"/>
                 </div>
