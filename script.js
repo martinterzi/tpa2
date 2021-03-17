@@ -9,6 +9,8 @@ $(document).ready(function () {
 
 const resultado = document.querySelector('#resultado');
 
+const track = document.querySelector('#track');
+
 window.onload = () => {
     const form = document.querySelector('#form');
     form.addEventListener('click', validarFormulario);
