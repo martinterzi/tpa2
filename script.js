@@ -111,7 +111,7 @@ function llamarTrending() {
 
 }
 
-const tracks = document.querySelector('#tracks');
+const tracks = document.querySelector('.tracks');
 function mostrarImagenesTrending(imagenes) {
 
     imagenes.forEach(imagen => {
