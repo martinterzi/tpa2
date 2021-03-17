@@ -46,6 +46,7 @@ body{
 }
 
 #resultado{
+    display: none;
     display: grid;
     grid-template-columns: 156px 156px;
     grid-template-rows: 126px 126px 126px 126px 126px 126px;

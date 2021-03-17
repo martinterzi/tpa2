@@ -70,11 +70,9 @@ function buscarImagenes() {
 }
 
 
-
-
-
 function mostrarImagenes(imagenes) {
-
+    document.getElementById("resultado").style.display='grid';
+    
     while (resultado.firstChild) {
         resultado.removeChild(resultado.firstChild);
     }
@@ -90,6 +88,42 @@ function mostrarImagenes(imagenes) {
     });
 
 }
+
+
+/*TRENDING-------------------------------------------*/
+
+function llamarTrending() {
+    
+
+    const key = 'va2haK5rm1yEoCYsd2zUqiLjxonxwd9M';
+    const url = (`https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=15`);
+
+    fetch(url)
+        .then(respuesta => respuesta.json())
+        .then(resultado => {
+
+            console.log(resultado)
+            mostrarImagenesTrending(resultado.data);
+        })
+
+
+}
+
+
+function mostrarImagenesTrending(imagenes) {
+
+    imagenes.forEach(imagen => {
+
+        const { images } = imagen;
+              track.innerHTML += `
+                <div class="card">
+                    <img class="im-pre" src="${images.preview_gif.url}"/>
+                </div>
+            `;
+    });
+
+}
+
 
 
 const track = document.querySelector('.track');
