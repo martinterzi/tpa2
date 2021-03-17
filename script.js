@@ -14,7 +14,7 @@ const track = document.querySelector('#track');
 window.onload = () => {
     const form = document.querySelector('#form');
     form.addEventListener('click', validarFormulario);
-
+    llamarTrending();
 };
 
 
@@ -119,7 +119,7 @@ function mostrarImagenesTrending(imagenes) {
         const { images } = imagen;
               track.innerHTML += `
                 <div class="card">
-                    <img class="im-pre" src="${images.preview_gif.url}"/>
+                    <img class="im-tre" src="${images.preview_gif.url}"/>
                 </div>
             `;
     });
