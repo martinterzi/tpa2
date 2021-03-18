@@ -176,7 +176,7 @@ if (window.PointerEvent) {
 
 $(document).ready(function () {
 
-    $('.modo-noc').on('click', function () {
+    $('dark-mode').on('click', function () {
         $('document.documentElement.classList').toggle('dark-mode');
 
 
