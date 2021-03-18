@@ -138,7 +138,7 @@ const gestureStart = (e) => {
     if (transformMatrix !== 'none') {
         transform = parseInt(transformMatrix.split(',')[4].trim());
     }
-}
+} 
 
 const gestureMove = (e) => {
     if (moving) {
@@ -172,4 +172,13 @@ if (window.PointerEvent) {
     window.addEventListener('mouseup', gestureEnd);
 }
 
-/*    */
+/*  MODO NOCTURNO  */
+
+$(document).ready(function () {
+
+    $('.modo-noc').on('click', function () {
+        $('document.documentElement.classList').toggle('dark-mode');
+
+
+    })
+})
