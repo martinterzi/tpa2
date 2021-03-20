@@ -173,12 +173,10 @@ if (window.PointerEvent) {
 }
 
 /*  MODO NOCTURNO  */
+const darkMode = document.querySelector('#dark-b');
+const body = doNotTrack.querySelector('body');
 
-$(document).ready(function () {
+darkMode.addEventListener('click', e =>{
+   body.classList.toggle('dark-mode');
 
-    $('dark-mode').on('click', function () {
-        $('document.documentElement.classList').toggle('dark-mode');
-
-
-    })
-})
+});
